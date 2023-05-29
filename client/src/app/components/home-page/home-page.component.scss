@@ -1,0 +1,20 @@
+div.row {
+    background-color: lightgray;
+}
+
+.col-md-6 {
+    padding-top: 3em;
+}
+
+@media (max-width:1200px) {
+    div.p-4.text-center.bg-image {
+        display: none;
+    }
+    div.row > div.col-md-6.order-md-1 > img {
+        display: none;
+    }
+    .col-md-6 {
+        padding-top: 3em;
+        width: max-content;
+    }
+}
