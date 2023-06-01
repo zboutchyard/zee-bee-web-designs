@@ -2,17 +2,33 @@
     text-align: justify;
     font-size: x-large;
     padding-top: 3em;
-    background-image: url("../../../assets/brick-background.jpg");
-    height: 100%;
 }
 
 img {
     border-radius: 18px;
 }
 
-p{
-    text-align: center;
-    padding-bottom: 3em;
+p {
+    text-align: justify;
+    padding-bottom: 1em;
 }
 
+body {
+    background-color: rgba(160, 158, 158, 0.6);
+    padding-bottom: 5rem;
+}
 
+@keyframes slideOnTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.top-image {
+    animation: slideOnTop 1.2s ease-in-out forwards;
+}

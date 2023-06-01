@@ -6,7 +6,53 @@ div.row {
     padding-top: 3em;
 }
 
-@media (max-width:1200px) {
+@keyframes slideOnTop {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for the right image */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.left-image {
+    animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.right-image {
+    animation: slideInRight 1s ease-in-out forwards;
+}
+
+.top-image {
+    animation: slideOnTop 1s ease-in-out forwards;
+}
+
+@media (max-width: 1200px) {
     div.p-4.text-center.bg-image {
         display: none;
     }

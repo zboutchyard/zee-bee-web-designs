@@ -1,34 +1,85 @@
-<section class="contact-section">
+<section
+    class="contact-section"
+    style="background-color: rgba(160, 158, 158, 0.6)"
+>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Get in touch using the contact information below:</p>
-            <ul>
-              <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:zackboutchyard@gmail.com">zackboutchyard@gmail.com</a>
-              </li>
-              <li>
-                <i class="fa fa-phone"></i>
-                <a href="tel:3364104221">336-410-4221</a>
-              </li>
-            </ul>
-          </div>
+        <div class="row">
+            <div class="col-lg-6 left-image">
+                <div class="contact-info">
+                    <h2 style="color: rgb(52, 51, 51)">Contact Us</h2>
+                    <p style="color: rgb(52, 51, 51)">
+                        We'd love to hear from you! Get in touch using the
+                        contact information below:
+                    </p>
+                    <ul>
+                        <li>
+                            <i
+                                style="color: rgb(52, 51, 51)"
+                                class="fa fa-envelope"
+                            ></i>
+                            <a
+                                style="color: rgb(52, 51, 51)"
+                                href="mailto:zackboutchyard@gmail.com"
+                                >zackboutchyard@gmail.com</a
+                            >
+                        </li>
+                        <li>
+                            <i
+                                style="color: rgb(52, 51, 51)"
+                                class="fa fa-phone"
+                            ></i>
+                            <a
+                                style="color: rgb(52, 51, 51)"
+                                href="tel:3364104221"
+                                >336-410-4221</a
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="../../../assets/phone-1439839_1920.png"
+                                class="img-fluid"
+                                alt="..."
+                                style="
+                                    max-height: 20rem;
+                                    max-width: 20rem;
+                                    display: block;
+                                    margin: auto;
+                                "
+                            />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 top-image">
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form method="post">
+                        <input
+                            [(ngModel)]="subject"
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            required
+                        />
+                        <input
+                            [(ngModel)]="recipient"
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            required
+                        />
+                        <textarea
+                            [(ngModel)]="content"
+                            name="message"
+                            placeholder="Your Message"
+                            required
+                        ></textarea>
+                        <button type="submit" (click)="sendEmail()">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6">
-          <div class="contact-form">
-            <h2>Send us a Message</h2>
-            <form method="post">
-              <input [(ngModel)]="subject" type="text" name="name" placeholder="Your Name" required>
-              <input [(ngModel)]="recipient" type="email" name="email" placeholder="Your Email" required>
-              <textarea [(ngModel)]="content" name="message" placeholder="Your Message" required></textarea>
-              <button type="submit" (click)="sendEmail()">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  
+</section>

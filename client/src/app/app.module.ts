@@ -30,42 +30,40 @@ import { FormsModule } from '@angular/forms';
 import { EmailService } from './services/email.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomePageComponent,
-    AboutPageComponent,
-    ServicesPageComponent,
-    ContactPageComponent,
-    ServiceBoxComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCheckboxModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbFormsModule,
-    MdbModalModule,
-    MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
-    MdbValidationModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [EmailService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        HomePageComponent,
+        AboutPageComponent,
+        ServicesPageComponent,
+        ContactPageComponent,
+        ServiceBoxComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MdbAccordionModule,
+        MdbCarouselModule,
+        MdbCheckboxModule,
+        MdbCollapseModule,
+        MdbDropdownModule,
+        MdbFormsModule,
+        MdbModalModule,
+        MdbPopoverModule,
+        MdbRadioModule,
+        MdbRangeModule,
+        MdbRippleModule,
+        MdbScrollspyModule,
+        MdbTabsModule,
+        MdbTooltipModule,
+        MdbValidationModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+    ],
+    providers: [EmailService],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

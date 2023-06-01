@@ -1,5 +1,5 @@
 body {
-    padding-top: 3em
+    padding-top: 3em;
 }
 
 .container {
@@ -14,4 +14,35 @@ a {
 
 div > div.p-5.text-center.bg-light {
     border-radius: 8px;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for the right image */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.top-image {
+    animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.bottom-image {
+    animation: slideInRight 1s ease-in-out forwards;
 }
