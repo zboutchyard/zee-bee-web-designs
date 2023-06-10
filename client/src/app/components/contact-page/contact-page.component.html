@@ -1,4 +1,5 @@
 <section
+    *ngIf="!submitted"
     class="contact-section"
     style="background-color: rgba(160, 158, 158, 0.6)"
 >
@@ -83,3 +84,19 @@
         </div>
     </div>
 </section>
+
+<div *ngIf="submitted">
+    <div class="container" style="padding-top: 5rem; margin-bottom: 40rem">
+        <div class="p-5 text-center bg-light top-image">
+            <h2>Thank You For Contacting Us.</h2>
+            <h3>We Will Be In Touch With You Shortly.</h3>
+            <a
+                class="btn btn-primary"
+                href="/home"
+                role="button"
+                style="margin-top: 2rem"
+                >Home</a
+            >
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.bg-white,
+div.mask {
+    background-color: #a7a3a3 !important;
+    box-shadow: none;
+}
+
+@keyframes slideOnTop {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1.mb-3 {
+    color: rgb(55, 55, 55);
+}
+
+header.scrolled .bg-white {
+    background-color: rgb(82, 82, 82) !important;
+    animation: slideOnTop 1s normal forwards;
+}
+
+#navigation {
+    height: 7rem;
+}
+
+header.scrolled .nav-link {
+    color: #ffffff;
+}
+
+li {
+    font-size: large;
+}
+
+@media (max-width: 1200px) {
+    img.logo {
+        margin-right: auto;
+        height: 4rem;
+    }
+
+    #navigation {
+        height: 5rem;
+    }
+
+    #logo {
+        display: block;
+    }
+}

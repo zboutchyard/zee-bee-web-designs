@@ -46,3 +46,10 @@ div > div.p-5.text-center.bg-light {
 .bottom-image {
     animation: slideInRight 1s ease-in-out forwards;
 }
+
+@media (max-width: 1200px) {
+    .bottom-image,
+    .top-image {
+        animation: none;
+    }
+}

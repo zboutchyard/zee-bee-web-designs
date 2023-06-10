@@ -138,3 +138,10 @@ body {
 .top-image {
     animation: slideOnTop 1s ease-in-out forwards;
 }
+
+@media (max-width: 1200px) {
+    .left-image,
+    .top-image {
+        animation: none;
+    }
+}

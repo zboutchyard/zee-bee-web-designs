@@ -1,6 +1,4 @@
 .wrapper {
-    text-align: justify;
-    font-size: x-large;
     padding-top: 3em;
 }
 
@@ -9,7 +7,6 @@ img {
 }
 
 p {
-    text-align: justify;
     padding-bottom: 1em;
 }
 
@@ -31,4 +28,10 @@ body {
 
 .top-image {
     animation: slideOnTop 1.2s ease-in-out forwards;
+}
+
+@media (max-width: 1200px) {
+    .top-image {
+        animation: none;
+    }
 }

@@ -1,5 +1,7 @@
-<app-header></app-header>
+<app-header [activePage]="activePage" [pageTitle]="pageTitle"></app-header>
 <body>
-    <router-outlet></router-outlet>
+    <router-outlet
+        (activate)="setActivePage($event.constructor.name)"
+    ></router-outlet>
 </body>
 <app-footer></app-footer>

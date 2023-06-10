@@ -63,4 +63,9 @@ div.row {
         padding-top: 3em;
         width: max-content;
     }
+    .left-image,
+    .right-image,
+    .top-image {
+        animation: none;
+    }
 }

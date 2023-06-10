@@ -11,6 +11,7 @@ export class ContactPageComponent {
     subject: any;
     content: any;
     error = '';
+    submitted = false;
 
     constructor(private emailService: EmailService) {}
 
@@ -21,6 +22,7 @@ export class ContactPageComponent {
                 this.subject,
                 `Customer email: ${this.recipient}\n\n ${this.subject} is trying to reach out to you on ZeeBee Web Designs. Here's what they said:  \n\n${this.content}`
             )
+
             .then(() => {
                 this.error = '';
             })
@@ -28,5 +30,6 @@ export class ContactPageComponent {
                 console.log('unable to hit node application');
                 this.error = error.message;
             });
+        this.submitted = true;
     }
 }

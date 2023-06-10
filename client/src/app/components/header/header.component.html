@@ -1,41 +1,101 @@
-<header>
+<header
+    class="header"
+    [ngClass]="{ scrolled: isHeaderScrolled }"
+    [ngClass]="{ active: activePage === 'home' }"
+>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav
+        class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+        id="navigation"
+    >
         <div class="container-fluid">
             <button
                 class="navbar-toggler"
+                id="toggler"
                 type="button"
-                (click)="fixedNavbarExample2.toggle()"
-                aria-controls="fixedNavbarExample2"
+                (click)="fixedNavbar.toggle()"
+                (click)="togglePageContent()"
+                aria-controls="fixedNavbar"
                 aria-expanded="false"
+                s
                 aria-label="Toggle navigation"
             >
                 <i class="fas fa-bars"></i>
             </button>
             <div
                 mdbCollapse
-                #fixedNavbarExample2="mdbCollapse"
+                #fixedNavbar="mdbCollapse"
                 class="collapse navbar-collapse"
-                id="fixedNavbarExample2"
+                id="fixedNavbar"
             >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
+                    <li
+                        class="nav-item active"
+                        [ngClass]="{ active: activePage === 'home' }"
+                    >
                         <a class="nav-link" aria-current="page" href="#"
                             >Home</a
                         >
                     </li>
-                    <li class="nav-item">
+                    <li
+                        class="nav-item"
+                        [ngClass]="{ active: activePage === 'services' }"
+                    >
                         <a class="nav-link" href="/services">Services</a>
                     </li>
-                    <li class="nav-item">
+                    <li
+                        class="nav-item"
+                        [ngClass]="{ active: activePage === 'about' }"
+                    >
                         <a class="nav-link" href="/about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li
+                        class="nav-item"
+                        [ngClass]="{ active: activePage === 'contact' }"
+                    >
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>
+            <a class="navbar-brand" href="#">
+                <img
+                    *ngIf="isHeaderScrolled"
+                    src="/assets/white-logo-no-bg.png"
+                    height="90"
+                    alt=""
+                    loading="lazy"
+                    style="margin-left: auto"
+                    class="logo"
+                    id="logo"
+                />
+                <img
+                    *ngIf="!isHeaderScrolled"
+                    src="/assets/black-logo-no-bg.svg"
+                    height="90"
+                    alt=""
+                    loading="lazy"
+                    style="margin-left: auto"
+                    class="logo"
+                    id="logo"
+                />
+            </a>
         </div>
     </nav>
+
     <!-- Navbar -->
+
+    <div
+        class="p-5 text-center bg-image"
+        style="height: 15rem; margin-top: 5rem"
+    >
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3" id="pageTitle">
+                        {{ pageTitle }}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
