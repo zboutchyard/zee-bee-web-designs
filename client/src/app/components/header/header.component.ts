@@ -31,7 +31,7 @@ export class HeaderComponent {
         if (this.toggled == false) {
             this.pageTitle = '';
             nav!.style.height = '18rem';
-            nav!.style.transition = 'max-height 0.25s ease-in';
+            nav!.style.transition = 'max-height 0.25s ease-in !important';
             logo!.style.display = 'none';
             this.toggled = true;
         } else {
@@ -39,7 +39,7 @@ export class HeaderComponent {
             this.toggled = false;
             nav!.style.height = '5rem';
             logo!.style.display = 'block';
-            nav!.style.transition = 'max-height 0.15s ease-out';
+            nav!.style.transition = 'max-height 0.15s ease-out !important';
         }
     }
 

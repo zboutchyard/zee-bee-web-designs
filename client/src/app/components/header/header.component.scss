@@ -49,4 +49,16 @@ li {
     #logo {
         display: block;
     }
+
+    div.mask {
+        height: 1rem !important;
+    }
+
+    div.p-5.text-center.bg-image {
+        display: none;
+    }
+
+    div.container {
+        margin-top: 10rem;
+    }
 }
