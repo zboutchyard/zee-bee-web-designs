@@ -36,7 +36,7 @@ li {
     font-size: large;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 600px) {
     img.logo {
         margin-right: auto;
         height: 4rem;
