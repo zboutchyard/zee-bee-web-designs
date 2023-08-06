@@ -1,6 +1,6 @@
-.bg-white,
+.fixed-top,
 div.mask {
-    background-color: #a7a3a3 !important;
+    background-color: #282828 !important;
     box-shadow: none;
 }
 
@@ -16,11 +16,11 @@ div.mask {
 }
 
 h1.mb-3 {
-    color: rgb(55, 55, 55);
+    color: rgb(125, 122, 122);
 }
 
-header.scrolled .bg-white {
-    background-color: rgb(82, 82, 82) !important;
+header.scrolled .fixed-top {
+    background-color: rgb(41, 40, 40) !important;
     animation: slideOnTop 1s normal forwards;
 }
 

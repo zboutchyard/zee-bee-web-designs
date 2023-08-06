@@ -6,8 +6,10 @@ var logger = require('morgan');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
-
+var https = require('https');
+const { google } = require('googleapis');
 var app = express();
+const axios = require('axios');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
     cors({
-        origin: 'https://zeebeewebdesigns.com',
+        // origin: 'https://zeebeewebdesigns.com',
+        origin: 'http://localhost:4200',
     })
 );
 
@@ -54,6 +57,62 @@ app.post('/sendEmail', (req, res) => {
             res.send('Email Sent Successfully');
         }
     });
+});
+
+// app.get('/getReviews', async (req, res) => {
+//     try {
+//         const apiKey = process.env.GAPIKEY;
+
+//         const client = await google.auth.getClient({
+//             // Specify the necessary authentication options based on your setup
+//             credentials: {
+//                 apiKey,
+//             },
+//             scopes: ['https://www.googleapis.com/auth/business.manage'],
+//         });
+
+//         const response = await google
+//             .mybusiness('v4')
+//             .accounts.locations.reviews.list({
+//                 // Specify the necessary parameters for the API request
+//                 parent: 'accounts/{accountId}/locations/{locationId}',
+//                 accountId: process.env.GACCOUNT_ID,
+//                 locationId: process.env.LOC_ID,
+//                 auth: client,
+//             });
+
+//         const reviews = response.data.reviews;
+//         res.json(reviews);
+//     } catch (error) {
+//         console.error('Error occurred:', error);
+//         res.status(500).json({
+//             error: 'An error occurred while fetching reviews',
+//         });
+//     }
+// });
+app.get('/getReviews', async (req, res) => {
+    try {
+        const auth = await google.auth.getClient({
+            scopes: ['https://www.googleapis.com/auth/business.manage'],
+        });
+
+        const apiKey = process.env.GAPIKEY;
+        const locationId = process.env.LOC_ID;
+
+        const accessToken = await auth.getAccessToken();
+
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${locationId}&key=${apiKey}`;
+        const response = await axios.get(url);
+        console.log('object', response.data);
+
+        const reviews = response.data.result.reviews;
+        res.json(reviews);
+    } catch (error) {
+        console.error('Error occurred:', error);
+        res.status(500).json({
+            error: 'An error occurred while fetching reviews',
+        });
+    }
 });
 
 // catch 404 and forward to error handler

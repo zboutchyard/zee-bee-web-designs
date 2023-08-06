@@ -1,7 +1,14 @@
-<app-header [activePage]="activePage" [pageTitle]="pageTitle"></app-header>
-<body>
-    <router-outlet
-        (activate)="setActivePage($event.constructor.name)"
-    ></router-outlet>
-</body>
-<app-footer></app-footer>
+<app-splash-screen [isVisible]="showSplashScreen"></app-splash-screen>
+<div [hidden]="showSplashScreen">
+    <div class="wrapper">
+        <app-header
+            [activePage]="activePage"
+            [pageTitle]="pageTitle"
+        ></app-header>
+
+        <router-outlet
+            (activate)="setActivePage($event.componentName)"
+        ></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

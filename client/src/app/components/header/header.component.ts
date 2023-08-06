@@ -10,7 +10,9 @@ export class HeaderComponent {
     isHeaderScrolled: boolean = false;
     @Input()
     activePage!: string;
+    @Input()
     isClicked: boolean = false;
+    @Input()
     toggled: boolean = false;
 
     constructor(private app: AppComponent) {}
@@ -20,7 +22,7 @@ export class HeaderComponent {
     @HostListener('window:scroll')
     onWindowScroll() {
         this.isHeaderScrolled = window.pageYOffset > 200;
-        let header = document.getElementsByClassName('.bg-white');
+        let header = document.getElementsByClassName('.fixed-top');
         for (let i = 0; i > header.length; i++) {
             header[i].classList.add('new-background');
         }
@@ -35,15 +37,10 @@ export class HeaderComponent {
             logo!.style.display = 'none';
             this.toggled = true;
         } else {
-            this.pageTitle = this.getPageTitle();
             this.toggled = false;
             nav!.style.height = '5rem';
             logo!.style.display = 'block';
             nav!.style.transition = 'max-height 0.15s ease-out !important';
         }
-    }
-
-    getPageTitle(): string {
-        return (this.pageTitle = this.app.pageTitle);
     }
 }

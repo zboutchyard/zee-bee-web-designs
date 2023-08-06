@@ -1,17 +1,24 @@
-.wrapper {
-    padding-top: 3em;
+.aboutWrapper {
+    padding-top: 10rem;
+}
+
+div.container.py-5 {
+    background-color: white;
+}
+
+div.wrapper {
+    padding-bottom: 2rem;
 }
 
 img {
     border-radius: 18px;
 }
 
-p {
-    padding-bottom: 1em;
+h4 {
+    margin-bottom: 3rem;
 }
 
 body {
-    background-color: rgba(160, 158, 158, 0.6);
     padding-bottom: 5rem;
 }
 

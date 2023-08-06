@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: './services-page.component.html',
     styleUrls: ['./services-page.component.scss'],
 })
-export class ServicesPageComponent {}
+export class ServicesPageComponent {
+    componentName = 'ServicesComponent';
+}

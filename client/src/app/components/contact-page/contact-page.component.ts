@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmailService } from 'src/app/services/email.service';
+import { EmailService } from 'src/app/services/email/email.service';
 
 @Component({
     selector: 'app-contact-page',
@@ -12,6 +12,7 @@ export class ContactPageComponent {
     content: any;
     error = '';
     submitted = false;
+    componentName = 'ContactComponent';
 
     constructor(private emailService: EmailService) {}
 
@@ -27,7 +28,6 @@ export class ContactPageComponent {
                 this.error = '';
             })
             .catch((error) => {
-                console.log('unable to hit node application');
                 this.error = error.message;
             });
         this.submitted = true;

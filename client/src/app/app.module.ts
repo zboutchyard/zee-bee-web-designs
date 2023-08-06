@@ -27,8 +27,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceBoxComponent } from './components/service-box/service-box.component';
 import { FormsModule } from '@angular/forms';
-import { EmailService } from './services/email.service';
+import { EmailService } from './services/email/email.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
         ServicesPageComponent,
         ContactPageComponent,
         ServiceBoxComponent,
+        SplashScreenComponent,
     ],
     imports: [
         BrowserModule,
